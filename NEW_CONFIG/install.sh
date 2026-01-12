@@ -1,39 +1,158 @@
-#!/bin/bash
-set -e 
+#!/usr/bin/env bash
+set -euo pipefail
 
-sudo pacman -Syu --noconfirm >/dev/null
-echo "Updating System..."
+echo "==> Updating system..."
+sudo pacman -Syu --noconfirm
 
-PACMAN-PACKAGES=(git base-devel blueman bluez-utils bluez-libs bluez brightnessctl btop cava curl wget fastfetch gtk3 gtk4 gvfs hyprland hyprshot pavucontrol pipewire pipewire-alsa pipewire-jack pipewire-pulse playerctl polkit python swaync grim slurp networkmanager network-manager-applet mesa vulkan-radeon wayland wayland-protocols wireplumber wl-clipboard wlogout waybar wofi xdg-desktop-portal xdg-desktop-portal-hyprland xorg-xwayland thunar kitty starship zsh)
-AUR_PACKAGES=()
+# -------------------------
+# Package lists
+# -------------------------
 
-sudo pacman -S "${PACMAN-PACKAGES[@]}" --noconfirm >/dev/null
-echo "Installing Pacman Packages..."
+PACMAN_PACKAGES=(
+    base-devel
+    git
+    bluez
+    bluez-utils
+    bluez-libs
+    blueman
+    brightnessctl
+    btop
+    cava
+    curl
+    wget
+    fastfetch
+    gtk3
+    gtk4
+    gtk-engine-murrine
+    gnome-themes-extra
+    gvfs
+    gvfs-mtp
+    gvfs-smb
+    hyprland
+    hyprshot
+    grim
+    slurp
+    wl-clipboard
+    pavucontrol
+    pamixer
+    pipewire
+    pipewire-alsa
+    pipewire-jack
+    pipewire-pulse
+    wireplumber
+    playerctl
+    polkit
+    polkit-gnome
+    python
+    swaync
+    networkmanager
+    network-manager-applet
+    nm-connection-editor
+    mesa
+    vulkan-radeon
+    wayland
+    wayland-protocols
+    xorg-xwayland
+    waybar
+    rofi
+    xdg-desktop-portal
+    xdg-desktop-portal-hyprland
+    thunar
+    thunar-archive-plugin
+    thunar-volman
+    file-roller
+    kitty
+    starship
+    zsh
+    wlogout
+    noto-fonts
+    noto-fonts-emoji
+    ttf-jetbrains-mono-nerd
+    papirus-icon-theme
+)
 
-if ! command -v yay >/dev/null; then
-    echo "yay not found, installing..."
-    git clone https://aur.archlinux.org/yay.git /tmp/yay
-    cd /tmp/yay
+AUR_PACKAGES=(
+    cliphist
+)
+
+# -------------------------
+# Install pacman packages
+# -------------------------
+
+echo "==> Installing pacman packages..."
+sudo pacman -S --needed --noconfirm "${PACMAN_PACKAGES[@]}"
+
+# -------------------------
+# Install yay if missing
+# -------------------------
+
+if ! command -v yay &>/dev/null; then
+    echo "==> yay not found, installing..."
+    tmpdir="$(mktemp -d)"
+    git clone https://aur.archlinux.org/yay.git "$tmpdir/yay"
+    pushd "$tmpdir/yay"
     makepkg -si --noconfirm
-    cd ~
-    rm -rf /tmp/yay
+    popd
+    rm -rf "$tmpdir"
 else
-    echo "yay was found, skipping..."
+    echo "==> yay already installed"
 fi
 
-yay -S "${AUR_PACKAGES}[@]" --noconfirm >/dev/null
+# -------------------------
+# Install AUR packages
+# -------------------------
 
-sudo systemctl enable NetworkManager
-sudo systemctl enable bluetooth
-sudo systemctl enable pipewire
+if [ "${#AUR_PACKAGES[@]}" -gt 0 ]; then
+    echo "==> Installing AUR packages..."
+    yay -S --needed --noconfirm "${AUR_PACKAGES[@]}"
+fi
 
-echo "Backing up previous ~/.config files"
-[-d "$HOME/.config"] && mv "HOME/.config" "$HOME/.config.backup.$(date +%s)"
+# -------------------------
+# Enable services
+# -------------------------
 
-cp -r ~/arch-dotfiles/.config ~/.config
+echo "==> Enabling services..."
+sudo systemctl enable --now NetworkManager
+sudo systemctl enable --now bluetooth
 
-echo "Copying config files to .config..."
+# PipeWire is socket-activated (do NOT enable pipewire.service)
+systemctl --user enable --now pipewire pipewire-pulse wireplumber
 
-echo "Setup Complete'
+# -------------------------
+# Backup and copy configs
+# -------------------------
 
-for later to keep track, You need to setup the zsh install and edit current configs cause current doesn't work
+echo "==> Backing up existing config..."
+if [ -d "$HOME/.config" ]; then
+    mv "$HOME/.config" "$HOME/.config.backup.$(date +%s)"
+fi
+
+echo "==> Copying dotfiles..."
+cp -r "$HOME/arch-dotfiles/.config" "$HOME/.config"
+
+echo "==> Setup complete ✔"
+
+# -------------------------
+# Zsh + Oh My Zsh
+# -------------------------
+
+echo "==> Setting Zsh as default shell..."
+if [ "$SHELL" != "/bin/zsh" ]; then
+    chsh -s /bin/zsh "$USER"
+fi
+
+echo "==> Installing Oh My Zsh..."
+
+export RUNZSH=no
+export CHSH=no
+export KEEP_ZSHRC=yes
+
+if [ ! -d "$HOME/.oh-my-zsh" ]; then
+    sh -c "$(curl -fsSL https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh)"
+else
+    echo "==> Oh My Zsh already installed"
+fi
+
+# for later to keep track, You need to setup the zsh install and edit current configs cause current doesn't work
+
+# Not working currently need to add packages and use yay for most stuff
