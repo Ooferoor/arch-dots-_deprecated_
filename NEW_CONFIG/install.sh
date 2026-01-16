@@ -9,70 +9,29 @@ sudo pacman -Syu --noconfirm
 # -------------------------
 
 PACMAN_PACKAGES=(
-    base-devel
-    git
-    bluez
-    bluez-utils
-    bluez-libs
-    blueman
-    brightnessctl
-    btop
-    cava
-    curl
-    wget
-    fastfetch
-    gtk3
-    gtk4
-    gtk-engine-murrine
-    gnome-themes-extra
-    gvfs
-    gvfs-mtp
-    gvfs-smb
-    hyprland
-    hyprshot
-    grim
-    slurp
-    wl-clipboard
-    pavucontrol
-    pamixer
-    pipewire
-    pipewire-alsa
-    pipewire-jack
-    pipewire-pulse
-    wireplumber
-    playerctl
-    polkit
-    polkit-gnome
-    python
-    swaync
-    networkmanager
-    network-manager-applet
-    nm-connection-editor
-    mesa
-    vulkan-radeon
-    wayland
-    wayland-protocols
-    xorg-xwayland
-    waybar
-    rofi
-    xdg-desktop-portal
-    xdg-desktop-portal-hyprland
-    thunar
-    thunar-archive-plugin
-    thunar-volman
-    file-roller
-    kitty
-    starship
-    zsh
-    wlogout
-    noto-fonts
-    noto-fonts-emoji
-    ttf-jetbrains-mono-nerd
-    papirus-icon-theme
-)
-
+	# Base System
+base-devel git sudo zsh neovim wget fd btop nano
+linux linux-firmware amd-ucode	
+	)
 AUR_PACKAGES=(
-    cliphist
+	# Wayland / Hyprland stack
+hyprland hyprlock
+wlroots0.17 wayland wayland-protocols xorg-xwayland
+xdg-desktop-portal xdg-desktop-portal-gtk xdg-desktop-portal-hyprland xdg-desktop-portal-wlr kitty
+	# Bars / Launcher / UI
+waybar rofi rofi-emoji swaync wlogout nwg-look waypaper starship
+	# Ultities
+grim slurp swww swaybg wl-clipboard playerctl brightnessctl satty xcur2png fastfetch cava thunar
+	# Audio
+pipewire pipewire-alsa pipewire-pulse pipewire-jack wireplumber pavucontrol
+	# Network / Bluetooth
+networkmanager network-manager-applet bluez bluez-utils blueman
+	# GTK 
+gtk2 gtk3 gtk4
+	# Fonts
+ttf-firacode-nerd ttf-jetbrains-mono-nerd
+noto-fonts noto-fonts-emoji noto-fonts-cjk
+ttf-dejavu ttf-liberation
 )
 
 # -------------------------

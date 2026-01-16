@@ -1,16 +1,3 @@
-/*
-
-██╗    ██╗ █████╗ ██╗   ██╗██████╗  █████╗ ██████╗ 
-██║    ██║██╔══██╗╚██╗ ██╔╝██╔══██╗██╔══██╗██╔══██╗
-██║ █╗ ██║███████║ ╚████╔╝ ██████╔╝███████║██████╔╝
-██║███╗██║██╔══██║  ╚██╔╝  ██╔══██╗██╔══██║██╔══██╗
-╚███╔███╔╝██║  ██║   ██║   ██████╔╝██║  ██║██║  ██║
- ╚══╝╚══╝ ╚═╝  ╚═╝   ╚═╝   ╚═════╝ ╚═╝  ╚═╝╚═╝  ╚═╝
-
-Waybar Config File by Arfan Zubi
-
-*/
-
 @import url("./mocha.css");
 
 * {
@@ -20,11 +7,13 @@ Waybar Config File by Arfan Zubi
     min-height: 0;
 }
 
+/* Make the bar itself transparent */
 window#waybar {
     color: @text;
-    background: @mantle;
+    background-color: rgba(0, 0, 0, 0); /* fully transparent */
 }
 
+/* Workspaces styling */
 #workspaces,
 #workspaces button,
 #workspaces button.active,
@@ -34,7 +23,7 @@ window#waybar {
 
 #workspaces {
     margin: 5px 0 5px 1rem;
-    background-color: rgba(54, 58, 79, 0.5);
+    background-color: rgba(54, 58, 79, 0.5); 
 }
 
 #workspaces button {
@@ -56,32 +45,59 @@ window#waybar {
     color: @red;
 }
 
+/* Grouped module styling - Added power-profiles-daemon here */
 #clock,
 #pulseaudio,
 #backlight,
+#power-profiles-daemon,
 #battery,
+#custom-swaync,
 #language,
 #custom-lock,
 #custom-power {
     margin: 5px 0;
     padding: 0.5rem 1rem;
-    background-color: rgba(54, 58, 79, 0.5);
+    background-color: rgba(54, 58, 79, 0.5); 
 }
 
+/* Window module */
 #window {
     margin: 5px 0;
     padding: 0.5rem 1rem;
     color: @blue;
 }
 
-/* make window module transparent when no windows present */
+/* Make window module transparent if empty */
 window#waybar.empty #window {
     background-color: transparent;
 }
 
+/* Individual module colors and specific shapes */
 #clock {
     color: @mauve;
     border-radius: 1.5rem;
+}
+
+#custom-swaync {
+    color: @mauve;
+    border-radius: 1.5rem;
+    margin-left: 5px;
+    margin-right: 5px;
+}
+
+#pulseaudio {
+    margin-left: 1rem;
+    color: @maroon;
+    border-radius: 1.5rem 0 0 1.5rem; /* Rounded left side */
+}
+
+#backlight {
+    color: @yellow;
+}
+
+/* Power Profiles styling */
+#power-profiles-daemon {
+    color: @peach;
 }
 
 #battery,
@@ -93,22 +109,16 @@ window#waybar.empty #window {
     color: @red;
 }
 
-#pulseaudio {
-    margin-left: 1rem;
-    color: @maroon;
-    border-radius: 1.5rem 0 0 1.5rem;
-}
-
-#backlight {
-    color: @yellow;
-}
-
 #language {
     color: @lavender;
+}
+
+#custom-lock {
+    color: @sky;
 }
 
 #custom-power {
     margin-right: 1rem;
     color: @red;
-    border-radius: 0 1.5rem 1.5rem 0;
+    border-radius: 0 1.5rem 1.5rem 0; /* Rounded right side */
 }

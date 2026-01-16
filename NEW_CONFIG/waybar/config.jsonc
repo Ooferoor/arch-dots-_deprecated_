@@ -1,12 +1,3 @@
-//
-// ██╗    ██╗ █████╗ ██╗   ██╗██████╗  █████╗ ██████╗ 
-// ██║    ██║██╔══██╗╚██╗ ██╔╝██╔══██╗██╔══██╗██╔══██╗
-// ██║ █╗ ██║███████║ ╚████╔╝ ██████╔╝███████║██████╔╝
-// ██║███╗██║██╔══██║  ╚██╔╝  ██╔══██╗██╔══██║██╔══██╗
-// ╚███╔███╔╝██║  ██║   ██║   ██████╔╝██║  ██║██║  ██║
-//  ╚══╝╚══╝ ╚═╝  ╚═╝   ╚═╝   ╚═════╝ ╚═╝  ╚═╝╚═╝  ╚═╝
-//
-// Waybar Config File by Arfan Zubi
 {
     "layer": "top",
     "position": "top",
@@ -20,10 +11,12 @@
     "modules-right": [
         "pulseaudio",
         "backlight",
+        "power-profiles-daemon", // Added here
         "battery",
         "hyprland/language",
         "custom/lock",
-        "custom/power"
+        "custom/power",
+        "custom/swaync"
     ],
     "hyprland/workspaces": {
         "on-click": "activate",
@@ -37,13 +30,12 @@
         "max-length": 150
     },
     "clock": {
-        "timezone": "Europe/Zurich",
+        "timezone": "America/New_York",
         "tooltip-format": "<tt><small>{calendar}</small></tt>",
         "format-alt": " {:%d.%m.%Y}",
         "format": " {:%H:%M}"
     },
     "pulseaudio": {
-        // "scroll-step": 1, // %, can be a float
         "format": "{icon} {volume}%",
         "format-muted": "",
         "format-icons": {
@@ -73,8 +65,23 @@
             ""
         ]
     },
+
+    /* Power Profiles Daemon Configuration */
+    "power-profiles-daemon": {
+      "format": "{icon}",
+      "tooltip-format": "Power profile: {profile}\nDriver: {driver}",
+      "tooltip": true,
+      "format-icons": {
+        "default": "",
+        "performance": "",
+        "balanced": "",
+        "power-saver": ""
+      }
+    },
+
     "battery": {
         "states": {
+            "good": 85,
             "warning": 30,
             "critical": 15
         },
@@ -90,6 +97,29 @@
             ""
         ]
     },
+
+    "custom/swaync": {
+        "tooltip": true,
+        "tooltip-format": "Left Click: Launch Notification Center\nRight Click: Do not Disturb",
+        "format": "{} {icon} ",
+        "format-icons": {
+            "notification": "<span foreground='red'><sup></sup></span>",
+            "none": "",
+            "dnd-notification": "<span foreground='red'><sup></sup></span>",
+            "dnd-none": "",
+            "inhibited-notification": "<span foreground='red'><sup></sup></span>",
+            "inhibited-none": "",
+            "dnd-inhibited-notification": "<span foreground='red'><sup></sup></span>",
+            "dnd-inhibited-none": ""
+        },
+        "return-type": "json",
+        "exec-if": "which swaync-client",
+        "exec": "swaync-client -swb",
+        "on-click": "sleep 0.1 && swaync-client -t -sw",
+        "on-click-right": "swaync-client -d -sw",
+        "escape": true
+    },
+
     "hyprland/language": {
         "format": "  {short}"
     },

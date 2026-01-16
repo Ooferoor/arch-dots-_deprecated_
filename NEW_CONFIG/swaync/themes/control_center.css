@@ -1,0 +1,126 @@
+/* Variables - Adjusted for better contrast */
+@define-color text            @on_surface;
+@define-color background-alt  alpha(@color1, .4);
+@define-color selected        @outline;
+@define-color hover           alpha(@selected, 0.8);
+@define-color urgent          @error;
+@define-color card-bg         rgba(255, 255, 255, 0.05); /* Subtle glass effect */
+
+* {
+  color: @text;
+  all: unset;
+  font-size: 14px;
+  font-family: "JetBrains Mono Nerd Font", "sans-serif";
+  transition: 200ms;
+}
+
+/* Control Center Container */
+.control-center {
+  background-color: rgba(15, 15, 15, 0.9); /* Darker, more solid feel */
+  border-radius: 20px;
+  border: 1px solid alpha(@selected, 0.3);
+  box-shadow: 0 10px 30px 0 rgba(0,0,0, 0.5);
+  margin: 10px;
+  padding: 16px;
+}
+
+/* --- WIDGETS --- */
+
+/* Title & Clear Button */
+.widget-title {
+  margin: 8px 0;
+}
+.widget-title > label {
+  font-size: 1.5rem;
+  font-weight: bold;
+  margin-left: 8px;
+}
+.widget-title button {
+  background: @card-bg;
+  border-radius: 10px;
+  padding: 4px 12px;
+  margin-right: 8px;
+}
+.widget-title button:hover {
+  background: @selected;
+  color: black;
+}
+
+/* The Button Grid - THE MAIN UPGRADE */
+/* --- BUTTONS GRID --- */
+.widget-buttons-grid {
+  background: transparent;
+  padding: 0;
+  margin: 10px 0;
+}
+
+.widget-buttons-grid > flowbox > flowboxchild > button {
+  background: @card-bg;
+  border-radius: 15px;
+  margin: 5px;
+  padding: 20px;
+  min-width: 85px;
+  border: 1px solid transparent;
+  transition: all 150ms cubic-bezier(0.4, 0, 0.2, 1); /* Smoother animation */
+}
+
+/* Hover State */
+.widget-buttons-grid > flowbox > flowboxchild > button:hover {
+  background: alpha(@selected, 0.2);
+  border: 1px solid alpha(@selected, 0.5);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
+}
+
+/* Clicked State (The "Pressed" Effect) */
+.widget-buttons-grid > flowbox > flowboxchild > button:active {
+  background: @selected; /* Changes to your main accent color */
+  color: black;           /* Darkens text/icon for contrast against accent color */
+  transform: scale(0.95); /* Shrinks slightly */
+  box-shadow: 0 0 5px @selected;
+  transition: 50ms;       /* Instant feedback on click */
+}
+
+/* Ensure icons inside change color when clicked */
+.widget-buttons-grid > flowbox > flowboxchild > button:active label {
+  color: black;
+}
+
+/* Music Player (MPRIS) */
+.widget-mpris {
+  background: @card-bg;
+  border-radius: 20px;
+  padding: 12px;
+  margin: 10px 0;
+}
+.widget-mpris-player {
+  background: transparent;
+  padding: 0;
+}
+.widget-mpris-album-art {
+  border-radius: 12px;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.3);
+}
+.widget-mpris-title { font-weight: bold; font-size: 1.1rem; }
+.widget-mpris-subtitle { opacity: 0.7; }
+
+/* --- NOTIFICATIONS --- */
+.notification-row {
+  outline: none;
+  margin: 4px 0;
+}
+
+.notification-background {
+  background: @card-bg;
+  border-radius: 16px;
+  border: 1px solid rgba(255,255,255,0.05);
+  margin: 4px;
+  padding: 8px;
+}
+
+.notification-background:hover {
+  background: rgba(255,255,255,0.08);
+}
+
+.notification.critical {
+  border: 1px solid @urgent;
+}

@@ -1,4 +1,5 @@
 
+
 # MONITORS #
 
 monitor=eDP-1, disable
@@ -8,14 +9,13 @@ monitor=HDMI-A-1,1920x1080@60,0x0,1
 
 $terminal = kitty
 $fileManager = thunar
-$menu = rofi -show drun -show-icons -wayland
+$menu = rofi -show drun -show-icons
 $browser = firefox
 
 # AUTOSTART #
 
-exec-once = waypaper --restore
+exec-once = way
 exec-once = swaync & waybar
-exec-once = swww init 
 
 # ENVIRONMENT VARIABLES #
 
@@ -86,7 +86,7 @@ misc {
 # INPUT #
 
 input {
-    kb_layout = us
+    kb_layout = se
     kb_variant =
     kb_model =
     kb_options =
@@ -200,4 +200,5 @@ bindel = ,XF86MonBrightnessUp, exec, brightnessctl s 10%+
 bindel = ,XF86MonBrightnessDown, exec, brightnessctl s 10%-
 
 # WINDOW RULESET AND WORKSPACES #
+
 
