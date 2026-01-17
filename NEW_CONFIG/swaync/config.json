@@ -45,7 +45,7 @@
       "actions": [
         {
           "label": "󰖩",
-          "command": "nm-connection-editor"
+          "command": "kitty nmtui"
         },
         {
           "label": "󰂯",

@@ -7,28 +7,21 @@
     min-height: 0;
 }
 
-/* Make the bar itself transparent */
 window#waybar {
     color: @text;
-    background-color: rgba(0, 0, 0, 0); /* fully transparent */
-}
-
-/* Workspaces styling */
-#workspaces,
-#workspaces button,
-#workspaces button.active,
-#workspaces button:hover {
-    border-radius: 1.5rem;
+    background-color: rgba(0, 0, 0, 0);
 }
 
 #workspaces {
     margin: 5px 0 5px 1rem;
     background-color: rgba(54, 58, 79, 0.5); 
+    border-radius: 1.5rem;
 }
 
 #workspaces button {
     padding: 0.5rem;
     color: @text;
+    border-radius: 1.5rem;
 }
 
 #workspaces button.active {
@@ -38,79 +31,61 @@ window#waybar {
 #workspaces button:hover {
     color: @lavender;
     background: @surface1;
-    border-color: @surface0;
 }
 
-#workspaces button.urgent {
-    color: @red;
-}
-
-/* Grouped module styling - Added power-profiles-daemon here */
-#clock,
-#pulseaudio,
-#backlight,
-#power-profiles-daemon,
-#battery,
-#custom-swaync,
-#language,
-#custom-lock,
-#custom-power {
-    margin: 5px 0;
-    padding: 0.5rem 1rem;
-    background-color: rgba(54, 58, 79, 0.5); 
-}
-
-/* Window module */
-#window {
-    margin: 5px 0;
-    padding: 0.5rem 1rem;
-    color: @blue;
-}
-
-/* Make window module transparent if empty */
-window#waybar.empty #window {
-    background-color: transparent;
-}
-
-/* Individual module colors and specific shapes */
 #clock {
     color: @mauve;
+    margin: 5px 0;
+    padding: 0.5rem 1rem;
+    background-color: rgba(54, 58, 79, 0.5);
     border-radius: 1.5rem;
 }
 
 #custom-swaync {
     color: @mauve;
+    margin: 5px 1rem 5px 5px;
+    padding: 0.5rem 1rem;
+    background-color: rgba(54, 58, 79, 0.5);
     border-radius: 1.5rem;
-    margin-left: 5px;
-    margin-right: 5px;
+}
+
+#cpu,
+#memory,
+#pulseaudio,
+#backlight,
+#power-profiles-daemon,
+#battery,
+#custom-lock,
+#custom-power {
+    margin: 5px 0;
+    padding: 0.5rem 1rem;
+    background-color: rgba(54, 58, 79, 0.5);
+}
+
+#cpu {
+    color: @teal;
+    margin-left: 1rem;
+    border-radius: 1.5rem 0 0 1.5rem;
+}
+
+#memory {
+    color: @blue;
 }
 
 #pulseaudio {
-    margin-left: 1rem;
     color: @maroon;
-    border-radius: 1.5rem 0 0 1.5rem; /* Rounded left side */
 }
 
 #backlight {
     color: @yellow;
 }
 
-/* Power Profiles styling */
 #power-profiles-daemon {
     color: @peach;
 }
 
-#battery,
-#battery.charging {
+#battery {
     color: @green;
-}
-
-#battery.warning:not(.charging) {
-    color: @red;
-}
-
-#language {
-    color: @lavender;
 }
 
 #custom-lock {
@@ -120,5 +95,15 @@ window#waybar.empty #window {
 #custom-power {
     margin-right: 1rem;
     color: @red;
-    border-radius: 0 1.5rem 1.5rem 0; /* Rounded right side */
+    border-radius: 0 1.5rem 1.5rem 0;
+}
+
+#window {
+    margin: 5px 0;
+    padding: 0.5rem 1rem;
+    color: @blue;
+}
+
+window#waybar.empty #window {
+    background-color: transparent;
 }
