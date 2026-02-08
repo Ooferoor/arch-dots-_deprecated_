@@ -1,0 +1,7 @@
+2026/01/24-15:20:36.696 646 Reusing MANIFEST /home/oofer/.config/BraveSoftware/Brave-Browser/Default/IndexedDB/https_www.icloud.com_0.indexeddb.leveldb/MANIFEST-000001
+2026/01/24-15:20:36.696 646 Recovering log #3
+2026/01/24-15:20:36.696 646 Reusing old log /home/oofer/.config/BraveSoftware/Brave-Browser/Default/IndexedDB/https_www.icloud.com_0.indexeddb.leveldb/000003.log 
+2026/01/24-15:21:08.705 648 Level-0 table #5: started
+2026/01/24-15:21:08.706 648 Level-0 table #5: 1654 bytes OK
+2026/01/24-15:21:08.707 648 Delete type=0 #3
+2026/01/24-15:21:08.707 648 Manual compaction at level-0 from (begin) .. (end); will stop at (end)

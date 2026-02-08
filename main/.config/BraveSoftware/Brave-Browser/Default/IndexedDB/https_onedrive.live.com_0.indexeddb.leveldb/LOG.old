@@ -1,0 +1,6 @@
+2026/01/23-22:08:49.785 17f3 Reusing MANIFEST /home/oofer/.config/BraveSoftware/Brave-Browser/Default/IndexedDB/https_onedrive.live.com_0.indexeddb.leveldb/MANIFEST-000001
+2026/01/23-22:08:49.785 17f3 Recovering log #80
+2026/01/23-22:08:49.804 17f3 Reusing old log /home/oofer/.config/BraveSoftware/Brave-Browser/Default/IndexedDB/https_onedrive.live.com_0.indexeddb.leveldb/000080.log 
+2026/01/23-22:08:53.696 1864 Level-0 table #85: started
+2026/01/23-22:08:53.707 1864 Level-0 table #85: 1212062 bytes OK
+2026/01/23-22:08:53.709 1864 Delete type=0 #80

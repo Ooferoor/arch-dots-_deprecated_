@@ -1,0 +1,6 @@
+2026/01/25-23:06:31.273 17f8 Creating DB /home/oofer/.config/BraveSoftware/Brave-Browser/Default/IndexedDB/https_www.pinterest.com_0.indexeddb.leveldb since it was missing.
+2026/01/25-23:06:31.276 17f8 Reusing MANIFEST /home/oofer/.config/BraveSoftware/Brave-Browser/Default/IndexedDB/https_www.pinterest.com_0.indexeddb.leveldb/MANIFEST-000001
+2026/01/25-23:07:10.982 17fa Level-0 table #5: started
+2026/01/25-23:07:10.987 17fa Level-0 table #5: 478600 bytes OK
+2026/01/25-23:07:10.988 17fa Delete type=0 #3
+2026/01/25-23:07:10.989 17fa Manual compaction at level-0 from (begin) .. (end); will stop at (end)

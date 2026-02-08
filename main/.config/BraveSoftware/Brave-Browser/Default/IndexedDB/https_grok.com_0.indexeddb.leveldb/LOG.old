@@ -1,0 +1,6 @@
+2026/01/25-21:54:42.055 17f8 Creating DB /home/oofer/.config/BraveSoftware/Brave-Browser/Default/IndexedDB/https_grok.com_0.indexeddb.leveldb since it was missing.
+2026/01/25-21:54:42.057 17f8 Reusing MANIFEST /home/oofer/.config/BraveSoftware/Brave-Browser/Default/IndexedDB/https_grok.com_0.indexeddb.leveldb/MANIFEST-000001
+2026/01/25-21:54:45.604 17fa Level-0 table #5: started
+2026/01/25-21:54:45.605 17fa Level-0 table #5: 1254 bytes OK
+2026/01/25-21:54:45.606 17fa Delete type=0 #3
+2026/01/25-21:54:45.606 17fa Manual compaction at level-0 from (begin) .. (end); will stop at (end)

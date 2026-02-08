@@ -1,0 +1,9 @@
+2026/02/01-00:08:21.198 2635e Reusing MANIFEST /home/oofer/.config/vesktop/sessionData/Local Storage/leveldb/MANIFEST-000001
+2026/02/01-00:08:21.208 2635e Recovering log #46
+2026/02/01-00:08:21.208 2635e Reusing old log /home/oofer/.config/vesktop/sessionData/Local Storage/leveldb/000046.log 
+2026/02/01-00:09:21.228 263e9 Level-0 table #51: started
+2026/02/01-00:09:21.232 263e9 Level-0 table #51: 36028 bytes OK
+2026/02/01-00:09:21.234 263e9 Delete type=0 #46
+2026/02/01-00:10:24.979 263e9 Level-0 table #53: started
+2026/02/01-00:10:24.982 263e9 Level-0 table #53: 58906 bytes OK
+2026/02/01-00:10:24.983 263e9 Delete type=0 #50

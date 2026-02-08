@@ -1,0 +1,29 @@
+2026/02/08-11:21:13.336 5 Reusing MANIFEST /home/oofer/.config/BraveSoftware/Brave-Browser/Default/Local Storage/leveldb/MANIFEST-000001
+2026/02/08-11:21:13.341 5 Recovering log #1072
+2026/02/08-11:21:13.342 5 Level-0 table #1076: started
+2026/02/08-11:21:13.345 5 Level-0 table #1076: 53344 bytes OK
+2026/02/08-11:21:13.347 5 Delete type=0 #1072
+2026/02/08-11:33:12.078 7 Level-0 table #1079: started
+2026/02/08-11:33:12.082 7 Level-0 table #1079: 67674 bytes OK
+2026/02/08-11:33:12.084 7 Delete type=0 #1077
+2026/02/08-11:37:34.335 7 Level-0 table #1081: started
+2026/02/08-11:37:34.339 7 Level-0 table #1081: 55430 bytes OK
+2026/02/08-11:37:34.341 7 Delete type=0 #1078
+2026/02/08-11:37:48.056 7 Level-0 table #1083: started
+2026/02/08-11:37:48.058 7 Level-0 table #1083: 53396 bytes OK
+2026/02/08-11:37:48.060 7 Delete type=0 #1080
+2026/02/08-11:37:48.060 7 Compacting 4@0 + 1@1 files
+2026/02/08-11:37:48.078 7 Generated table #1084@0: 1381 keys, 1240424 bytes
+2026/02/08-11:37:48.078 7 Compacted 4@0 + 1@1 files => 1240424 bytes
+2026/02/08-11:37:48.079 7 compacted to: files[ 0 1 1 0 0 0 0 ]
+2026/02/08-11:37:48.080 7 Delete type=2 #1074
+2026/02/08-11:37:48.080 7 Delete type=2 #1076
+2026/02/08-11:37:48.080 7 Delete type=2 #1083
+2026/02/08-11:37:48.080 7 Delete type=2 #1081
+2026/02/08-11:37:48.080 7 Delete type=2 #1079
+2026/02/08-11:39:48.056 7 Level-0 table #1086: started
+2026/02/08-11:39:48.065 7 Level-0 table #1086: 53433 bytes OK
+2026/02/08-11:39:48.067 7 Delete type=0 #1082
+2026/02/08-11:39:58.848 5 Level-0 table #1088: started
+2026/02/08-11:39:58.856 5 Level-0 table #1088: 53465 bytes OK
+2026/02/08-11:39:58.858 5 Delete type=0 #1085

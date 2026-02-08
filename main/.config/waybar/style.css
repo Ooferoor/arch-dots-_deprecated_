@@ -1,0 +1,109 @@
+@import url("./mocha.css"); /*When done with matugen setup replace with colors.css*/
+
+* {
+  font-family: "JetBrainsMono Nerd Font";
+  font-weight: bold;
+  font-size: 15px;
+  min-height: 0;
+}
+
+window#waybar {
+  color: @text;
+  background-color: rgba(0, 0, 0, 0);
+}
+
+#workspaces {
+  margin: 5px 0 5px 1rem;
+  background-color: rgba(54, 58, 79, 0.5);
+  border-radius: 1.5rem;
+}
+
+#workspaces button {
+  padding: 0.5rem;
+  color: @text;
+  border-radius: 1.5rem;
+}
+
+#workspaces button.active {
+  color: @mauve;
+}
+
+#workspaces button:hover {
+  color: @lavender;
+  background: @surface1;
+}
+
+#clock {
+  color: @mauve;
+  margin: 5px 0;
+  padding: 0.5rem 1rem;
+  background-color: rgba(54, 58, 79, 0.5);
+  border-radius: 1.5rem;
+}
+
+#custom-swaync {
+  color: @mauve;
+  margin: 5px 1rem 5px 5px;
+  padding: 0.5rem 1rem;
+  background-color: rgba(54, 58, 79, 0.5);
+  border-radius: 1.5rem;
+}
+
+#cpu,
+#memory,
+#pulseaudio,
+#backlight,
+#power-profiles-daemon,
+#battery,
+#custom-lock,
+#custom-power {
+  margin: 5px 0;
+  padding: 0.5rem 1rem;
+  background-color: rgba(54, 58, 79, 0.5);
+}
+
+#cpu {
+  color: @teal;
+  margin-left: 1rem;
+  border-radius: 1.5rem 0 0 1.5rem;
+}
+
+#memory {
+  color: @blue;
+}
+
+#pulseaudio {
+  color: @maroon;
+}
+
+#backlight {
+  color: @yellow;
+}
+
+#power-profiles-daemon {
+  color: @peach;
+}
+
+#battery {
+  color: @green;
+}
+
+#custom-lock {
+  color: @sky;
+}
+
+#custom-power {
+  margin-right: 1rem;
+  color: @red;
+  border-radius: 0 1.5rem 1.5rem 0;
+}
+
+#window {
+  margin: 5px 0;
+  padding: 0.5rem 1rem;
+  color: @blue;
+}
+
+window#waybar.empty #window {
+  background-color: transparent;
+}

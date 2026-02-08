@@ -1,0 +1,58 @@
+{
+   "author": "Adguard Software Ltd",
+   "background": {
+      "page": "pages/background.html",
+      "persistent": true
+   },
+   "browser_action": {
+      "default_icon": {
+         "19": "assets/icons/on-19.png",
+         "38": "assets/icons/on-38.png"
+      },
+      "default_popup": "pages/popup.html",
+      "default_title": "__MSG_name__"
+   },
+   "content_scripts": [ {
+      "all_frames": true,
+      "js": [ "pages/content-script-start.js" ],
+      "match_about_blank": true,
+      "matches": [ "http://*/*", "https://*/*" ],
+      "run_at": "document_start"
+   }, {
+      "all_frames": true,
+      "js": [ "pages/content-script-end.js" ],
+      "match_about_blank": true,
+      "matches": [ "http://*/*", "https://*/*" ],
+      "run_at": "document_end"
+   }, {
+      "all_frames": true,
+      "js": [ "pages/subscribe.js" ],
+      "match_about_blank": false,
+      "matches": [ "http://*/*", "https://*/*" ],
+      "run_at": "document_end"
+   }, {
+      "all_frames": false,
+      "js": [ "pages/thankyou.js" ],
+      "matches": [ "*://*.adguard.com/*/thankyou.html*", "*://*.adguard.info/*/thankyou.html*", "*://*.adguard.app/*/thankyou.html*" ],
+      "run_at": "document_start"
+   } ],
+   "content_security_policy": "script-src 'self' 'sha256-GH4MISem+XXlowF3M/QKqtfEOkhzt1IQoYAZCyE46YU='; object-src 'self'",
+   "default_locale": "en",
+   "description": "__MSG_description__",
+   "devtools_page": "pages/devtools.html",
+   "icons": {
+      "128": "assets/icons/on-128.png",
+      "16": "assets/icons/on-16.png"
+   },
+   "key": "MIIBIjANBgkqhkiG9w0BAQEFAAOCAQ8AMIIBCgKCAQEAicmrWIGFjv/D9t+yEL1NgyfVyts8/6cSx//DjeSWkoQb9sfZYq+fvF91M2OVLEFsEL7QF9aNwYDoWteaRyIsqEKaD1UHwMTVSI0+1P+fOpd2uPbIeKurcqbbq4xcWSA2lW8HEz4x1m39FwTdj27305X/aNCS+3cVoN9S44oQX9p8FU9twE9WFtT7cXH/EePi1b39ey9brLb99dl9jsJi80+4ZB1gMUQ6U8CmFMZUncwhGE9geOVHeoEf4RKrzqlHrb5BNZbugmdpuSWjOZFbUT3Szy9HvbpPT9C5uNttcef16RvCUfyXNvSdDx+xCZWY1OstDsSlPwxopwVXmwE/LwIDAQAB",
+   "manifest_version": 2,
+   "minimum_chrome_version": "79",
+   "name": "__MSG_name__",
+   "optional_permissions": [ "privacy" ],
+   "options_page": "pages/options.html",
+   "permissions": [ "tabs", "\u003Call_urls>", "webRequest", "webRequestBlocking", "webNavigation", "storage", "unlimitedStorage", "contextMenus", "cookies" ],
+   "short_name": "__MSG_short_name__",
+   "update_url": "https://clients2.google.com/service/update2/crx",
+   "version": "5.2.800.2",
+   "web_accessible_resources": [ "/web-accessible-resources/*" ]
+}

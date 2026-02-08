@@ -1,0 +1,37 @@
+2026/01/24-15:21:11.006 648 Reusing MANIFEST /home/oofer/.config/BraveSoftware/Brave-Browser/Default/IndexedDB/https_onedrive.live.com_0.indexeddb.leveldb/MANIFEST-000001
+2026/01/24-15:21:11.006 648 Recovering log #84
+2026/01/24-15:21:11.007 648 Reusing old log /home/oofer/.config/BraveSoftware/Brave-Browser/Default/IndexedDB/https_onedrive.live.com_0.indexeddb.leveldb/000084.log 
+2026/01/24-15:21:11.820 648 Compacting 1@1 + 1@2 files
+2026/01/24-15:21:11.851 648 Generated table #87@1: 8035 keys, 1146836 bytes
+2026/01/24-15:21:11.851 648 Compacted 1@1 + 1@2 files => 1146836 bytes
+2026/01/24-15:21:11.853 648 compacted to: files[ 0 0 1 0 0 0 0 ]
+2026/01/24-15:21:13.311 6b6 Level-0 table #89: started
+2026/01/24-15:21:13.332 6b6 Level-0 table #89: 1374486 bytes OK
+2026/01/24-15:21:13.333 6b6 Delete type=2 #85
+2026/01/24-15:21:13.333 6b6 Delete type=0 #84
+2026/01/24-15:21:13.333 6b6 Delete type=2 #82
+2026/01/24-15:21:13.347 6b6 Compacting 1@1 + 1@2 files
+2026/01/24-15:21:13.382 6b6 Generated table #90@1: 7992 keys, 1394989 bytes
+2026/01/24-15:21:13.383 6b6 Compacted 1@1 + 1@2 files => 1394989 bytes
+2026/01/24-15:21:13.384 6b6 compacted to: files[ 0 0 1 0 0 0 0 ]
+2026/01/24-15:21:13.592 6b6 Level-0 table #92: started
+2026/01/24-15:21:13.611 6b6 Level-0 table #92: 973092 bytes OK
+2026/01/24-15:21:13.612 6b6 Delete type=2 #89
+2026/01/24-15:21:13.612 6b6 Delete type=0 #88
+2026/01/24-15:21:13.612 6b6 Delete type=2 #87
+2026/01/24-15:21:13.623 648 Compacting 1@1 + 1@2 files
+2026/01/24-15:21:13.657 648 Generated table #93@1: 9088 keys, 1977943 bytes
+2026/01/24-15:21:13.657 648 Compacted 1@1 + 1@2 files => 1977943 bytes
+2026/01/24-15:21:13.658 648 compacted to: files[ 0 0 1 0 0 0 0 ]
+2026/01/24-15:21:21.766 648 Level-0 table #95: started
+2026/01/24-15:21:21.782 648 Level-0 table #95: 995988 bytes OK
+2026/01/24-15:21:21.784 648 Delete type=2 #90
+2026/01/24-15:21:21.785 648 Delete type=2 #92
+2026/01/24-15:21:21.785 648 Delete type=0 #91
+2026/01/24-15:21:22.805 6b6 Compacting 1@1 + 1@2 files
+2026/01/24-15:21:22.841 6b6 Generated table #96@1: 6972 keys, 2234554 bytes
+2026/01/24-15:21:22.850 6b6 Generated table #97@1: 3178 keys, 353195 bytes
+2026/01/24-15:21:22.850 6b6 Compacted 1@1 + 1@2 files => 2587749 bytes
+2026/01/24-15:21:22.851 6b6 compacted to: files[ 0 0 2 0 0 0 0 ]
+2026/01/24-15:21:22.851 6b6 Delete type=2 #95
+2026/01/24-15:21:22.851 6b6 Delete type=2 #93
